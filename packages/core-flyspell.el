@@ -1,0 +1,40 @@
+;;; core-flyspell.el --- flyspell setup
+;;
+;; Copyright 2017 Tracy Phillips
+;;
+;; This file is not part of GNU Emacs.
+;;
+;; This program is free software; you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation; either version 3 of the License, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; if not, write to the Free Software Foundation,
+;; Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
+
+;;; Commentary:
+
+;;; Code:
+
+(use-package flyspell
+  :diminish (flyspell-mode . "φ")
+  :bind* (("M-m ] s" . flyspell-goto-next-error))
+  :config
+  (setq flyspell-issue-message-flag nil)
+  (dolist (hook '(org-mode-hook git-commit-mode-hook))
+    (add hook hook (lambda ()
+                     (flyspell-mode 1)
+                     (auto-fill-mode 1)
+                     )
+         )
+    )
+  (setq-default ispell-program-name "aspell")
+  )
+
+;;; core-flyspell.el ends here

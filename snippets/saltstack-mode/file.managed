@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: File Managed
+# key: file.managed
+# --
+$1:
+  file.managed:
+    - name: $2
+    - source: salt://$2/files/$1
+    - user: ${3:root}
+    - group: $3
+    - mode: '${4:644}'
+
+$0

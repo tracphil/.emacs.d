@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Salt Header
+# key: saltheader
+# --
+########################################################################
+# File managed by SaltStack. Local changes will be overwritten.
+# formula: ${1:formula-short-name}
+# path: salt://$1/files/$2/`(buffer-name)`
+########################################################################
+
+$0

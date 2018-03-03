@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: Directory Managed
+# key: directory.managed
+# --
+$1:
+  directory.managed:
+    - user: ${3:root}
+    - group: $3
+    - mode: '${4:750}'
+
+$0

@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: File Recurse
+# key: file.recurse
+# --
+$1:
+  file.recurse:
+    - source: salt://$2/files/$1
+    - template: jinja
+    - user: ${3:root}
+    - group: $3
+    - mode: '${4:600}'
+
+$0

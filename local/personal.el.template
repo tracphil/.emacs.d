@@ -1,0 +1,3 @@
+;; load personal information
+(setq user-full-name "Example User"
+      user-email-address "example.user@example.com")
